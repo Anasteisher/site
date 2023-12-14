@@ -1,0 +1,15 @@
+#link {
+text-decoration: none
+}
+
+  .sidebar {
+
+     padding: 50px;
+     color: red;
+     font-size: 24px;
+ }
+
+  .content {
+     grid-area: content;
+ }
+

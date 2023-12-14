@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+<form action="{% url 'thanks_page' %}" method="POST">
+    {% csrf_token %}
+    <label for="user_name">Введите ФИО:</label>
+    <input name="user_name" id="user_name">
+    <p>
+    <label for="email">Ваш email:</label>
+    <input name="email" id="email">
+    <p>
+    <label for="feedback">Отзыв о собачках:</label>
+    <input name="feedback" id="feedback">
+    <p>
+    <br>
+    <button type="submit">Отправить только хорошее</button>
+</form>
+
+{% for el in DogComment %}
+<div class="DogComment">
+    <h3>{{el.uname}}</h3>
+    <h3>{{el.email}}</h3>
+    <h3>{{el.feedback}}</h3>
+</div>
+{% endfor %}
+
+{% endblock %}
